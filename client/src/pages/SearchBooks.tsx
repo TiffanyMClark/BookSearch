@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import type { FormEvent } from "react";
 import { Container, Col, Form, Button, Card, Row } from "react-bootstrap";
 
-import Auth from "../utils/auth";
-import { saveBookIds, getSavedBookIds } from "../utils/localStorage";
-import type { Book } from "../models/Book";
+import Auth from "../utils/auth.js";
+import { saveBookIds, getSavedBookIds } from "../utils/localStorage.js";
+import type { Book } from "../models/Book.js";
 import type { GoogleAPIBook } from "../models/GoogleAPIBook";
 import { useMutation } from "@apollo/client";
-import { ADD_BOOK } from "../utils/mutations";
-import { searchGoogleBooks } from "../utils/API"; // Import the function
+import { ADD_BOOK } from "../utils/mutations.js";
+import { searchGoogleBooks } from "../utils/API.js"; // Import the function
 
 const SearchBooks = () => {
   // create state for holding returned google api data
