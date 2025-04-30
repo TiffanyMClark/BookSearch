@@ -1,14 +1,6 @@
 import User from "../models/User.js";
 import { AuthenticationError, signToken } from "../services/auth.js";
 
-interface AddUserArgs {
-  input: {
-    username: string;
-    email: string;
-    password: string;
-  };
-}
-
 interface LoginUserArgs {
   email: string;
   password: string;
