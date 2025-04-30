@@ -5,6 +5,7 @@ import { ApolloServer } from "@apollo/server";
 import { expressMiddleware } from "@apollo/server/express4";
 import { typeDefs, resolvers } from "./schemas/index.js";
 import { authenticateToken } from "./services/auth.js";
+import db from "./config/connection.js";
 import { fileURLToPath } from "node:url";
 
 const server = new ApolloServer({
@@ -14,7 +15,8 @@ const server = new ApolloServer({
 
 const startApolloServer = async () => {
   await server.start();
-
+  await db;
+  console.log("Connected to MongoDB");
   const PORT = process.env.PORT || 3001;
   const app = express();
   const __filename = fileURLToPath(import.meta.url);
